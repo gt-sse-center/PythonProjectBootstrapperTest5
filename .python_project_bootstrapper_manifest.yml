@@ -5,6 +5,10 @@
 #############################################################################################################
 
 .github/CODEOWNERS: 42bdd9797e12e16d0fe3e10f798da519189b41eeca25da34ce3bab44cb04aa68
+.github/ISSUE_TEMPLATE/bug_report.md: 020287ec0fe74741bc26ceab3b8a6810ad8f2d102b3f9b3a087e664ba9c82d50
+.github/ISSUE_TEMPLATE/config.yml: ea501f6c66a509af6880003a82b878aa3736148759aa2ea7934ecf05dc73d9e7
+.github/ISSUE_TEMPLATE/custom.md: 4031edc8e877d1326a8744726f2be3756465e6ac7a9220738af65ec6d6cc34da
+.github/ISSUE_TEMPLATE/feature_request.md: 69d638f44706a1dcd55ec5a8dd74956bd7ec1f8809e207fa0cabaf3ef04a7fc2
 .github/release_sources.yaml: c2241d25423ec6e22afa41c6caed30162438af803e6de74ee466479ca6cd8246
 .github/workflows/codeql.yml: 5e6e94a06f17ebbd8d3042467327837bb2076c29a1414b794800a3c1b09cca7d
 .github/workflows/standard.yaml: 21c8686fcf51e102a928c9bd8f3adc8b9ceead4f067c4f91dace9ec5192e5b99
@@ -24,7 +28,7 @@ GOVERNANCE.md: 67de5f86a34047561ce7e217a0db003767cfb3739b8e04193c9c21ac0350f3b7
 LICENSE.txt: cdcedfdd3d9071859f7902f300b73f3cd1573de80a9086317c5bdf0863ad5458
 MAINTAINERS.md: 98973dd71ba04520c4b80ea82bebc5c69dbb6ddc63e4b34279b087c3767ac37c
 README.md: 2545919d320b4e762b85eb86e9b9cfc9b1ea7ad264ae2690908575494980a1e9
-SECURITY.md: 151d39ff6f5c4a4f4dfcfa9dfc3684d63f167182598ae5b9536e645151286e4e
+SECURITY.md: 5e6039c4a90ebd084dbfa8ffe8da7e891db1d93a042f8670ef2cc084c912a3c7
 pyproject.toml: 37570f5130af6c739d4fd0dae4836d17580869d721e3202171d1b6d1a2e5b43e
 src/AutoGitSemVer.yaml: a9d977cf94f3e197a0e7a2ceebdd94f55470a0599a78a81123b169b75fa6a63f
 src/BuildBinary.py: d579a207c72bff5ba4e799f0de064d8ea97c834307f1b5d4c2be85e591e42ecd

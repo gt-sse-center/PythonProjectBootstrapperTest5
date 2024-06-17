@@ -186,12 +186,45 @@ jobs:
       validation_command: PythonProjectBootstrapperTest5 Version
 
 
+# ----------------------------------------------------------------------
+  create_docker_image:
+    needs: validate
+
+    strategy:
+      fail-fast: false
+
+      matrix:
+        python_version:
+          - "3.12"
+          - "3.11"
+          - "3.10"
+          # - "3.9"  # Not supported
+          # - "3.8"  # Not supported
+
+    name: Create Docker Image
+
+    permissions:
+      contents: read
+      packages: write
+
+    uses: davidbrownell/dbrownell_DevTools/.github/workflows/callable_create_docker_image.yaml@CI-v0.20.0
+    with:
+      operating_system: ubuntu-latest
+      python_version: ${{ matrix.python_version }}
+      name_suffix: -${{ matrix.python_version }}
+      bootstrap_args: ""
+      docker_description: "PythonProjectBootstrapperTest5 - ${{ matrix.python_version }}"
+      push_image_as_package: true
+      container_registry_username: gt-sse-center
+
 
   # ----------------------------------------------------------------------
   publish:
     needs:
       - validate_package
       - validate_binary
+
+      - create_docker_image
 
 
     name: Publish

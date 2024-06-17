@@ -6,4 +6,4 @@ We prefer that you use the [GitHub mechanism for privately reporting a vulnerabi
 
 We will gladly give credit to anyone who reports a vulnerability so that we can fix it. If you want to remain anonymous or pseudonymous instead, please let us know that; we will gladly respect your wishes.
 
-We gladly welcome patches to fix such vulnerabilities! See [CONTRIBUTING.md](https://github.com/gt-sse-center/PythonProjectBootstrapperTest5/blob/main/CONTRIBUTING.md) for information about contributions.
+We gladly welcome patches to fix such vulnerabilities! See [CONTRIBUTING.md](CONTRIBUTING.md) for information about contributions.

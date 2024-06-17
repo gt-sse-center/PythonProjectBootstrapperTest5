@@ -5,10 +5,11 @@
 #############################################################################################################
 
 .github/CODEOWNERS: 42bdd9797e12e16d0fe3e10f798da519189b41eeca25da34ce3bab44cb04aa68
-.github/ISSUE_TEMPLATE/bug_report.md: cc5b26f19d06dd4520ab35cb47759eb04944ec6bf0c1d27ba49dc132a49247dd
+.github/ISSUE_TEMPLATE/bug_report.md: d22e441faf7d222797de7811cb45dca256aa04bea7b0b6d0d139472521b25eb4
 .github/ISSUE_TEMPLATE/config.yml: d6d81427cbfd6fb2c87462698c241fd6c31e47025c137498e50b8a01b228cb95
 .github/ISSUE_TEMPLATE/custom.md: 14e93edcf3acd7351957a11551565a3d03317eb9246a46bbbd9e01b8f28cf843
-.github/ISSUE_TEMPLATE/feature_request.md: 245a2e3ffdd904576010efddd4bb151f0a778a8da51255954f771f3a89f618f1
+.github/ISSUE_TEMPLATE/feature_request.md: 1d51dd0db0907d1692c25fcba817f22f9768c4900c3fbb6978dca954de65b922
+.github/pull_request_template.md: 6a7736d2a3ed6154e3f84462b483d7640709abe7f42e7caff63354eec84788af
 .github/release_sources.yaml: c2241d25423ec6e22afa41c6caed30162438af803e6de74ee466479ca6cd8246
 .github/workflows/codeql.yml: 5e6e94a06f17ebbd8d3042467327837bb2076c29a1414b794800a3c1b09cca7d
 .github/workflows/standard.yaml: 21c8686fcf51e102a928c9bd8f3adc8b9ceead4f067c4f91dace9ec5192e5b99

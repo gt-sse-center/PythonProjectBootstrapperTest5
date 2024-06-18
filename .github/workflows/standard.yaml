@@ -34,14 +34,14 @@ jobs:
 
       matrix:
         os:
-          - macos-latest
+          # BugBug - macos-latest
           - ubuntu-latest
-          - windows-latest
+          # BugBug - windows-latest
 
         python_version:
-          - "3.12"
+          # BugBug - "3.12"
           - "3.11"
-          - "3.10"
+          # BugBug - "3.10"
           # - "3.9"  # Not supported
           # - "3.8"  # Not supported
 
@@ -64,7 +64,7 @@ jobs:
     permissions:
       contents: read
 
-    uses: davidbrownell/dbrownell_DevTools/.github/workflows/callable_package_python_coverage.yaml@CI-v0.20.0
+    uses: davidbrownell/dbrownell_DevTools/.github/workflows/callable_package_python_coverage.yaml@Coverage # BugBug CI-v0.20.0
     with:
       gist_id: 2f9d770d13e3a148424f374f74d41f4b
       gist_filename: PythonProjectBootstrapperTest5_coverage.json
@@ -73,21 +73,21 @@ jobs:
 
   # ----------------------------------------------------------------------
   create_package:
-    needs: validate
+    needs: package_coverage
 
     strategy:
       fail-fast: false
 
       matrix:
         os:
-          - macos-latest
+          # BugBug - macos-latest
           - ubuntu-latest
-          - windows-latest
+          # BugBug - windows-latest
 
         python_version:
-          - "3.12"
+          # BugBug - "3.12"
           - "3.11"
-          - "3.10"
+          # BugBug - "3.10"
           # - "3.9"  # Not supported
           # - "3.8"  # Not supported
 
@@ -110,14 +110,14 @@ jobs:
 
       matrix:
         os:
-          - macos-latest
+          # BugBug - macos-latest
           - ubuntu-latest
-          - windows-latest
+          # BugBug - windows-latest
 
         python_version:
-          - "3.12"
+          # BugBug - "3.12"
           - "3.11"
-          - "3.10"
+          # BugBug - "3.10"
           # - "3.9"  # Not supported
           # - "3.8"  # Not supported
 
@@ -134,16 +134,16 @@ jobs:
 
   # ----------------------------------------------------------------------
   create_binary:
-    needs: validate
+    needs: package_coverage
 
     strategy:
       fail-fast: false
 
       matrix:
         os:
-          - macos-latest
+          # BugBug - macos-latest
           - ubuntu-latest
-          - windows-latest
+          # BugBug - windows-latest
 
         python_version:
           - "3.11"
@@ -167,9 +167,9 @@ jobs:
 
       matrix:
         os:
-          - macos-latest
+          # BugBug - macos-latest
           - ubuntu-latest
-          - windows-latest
+          # BugBug - windows-latest
 
         python_version:
           - "3.11"
@@ -186,36 +186,36 @@ jobs:
       validation_command: PythonProjectBootstrapperTest5 Version
 
 
-# ----------------------------------------------------------------------
-  create_docker_image:
-    needs: validate
-
-    strategy:
-      fail-fast: false
-
-      matrix:
-        python_version:
-          - "3.12"
-          - "3.11"
-          - "3.10"
-          # - "3.9"  # Not supported
-          # - "3.8"  # Not supported
-
-    name: Create Docker Image
-
-    permissions:
-      contents: read
-      packages: write
-
-    uses: davidbrownell/dbrownell_DevTools/.github/workflows/callable_create_docker_image.yaml@CI-v0.20.0
-    with:
-      operating_system: ubuntu-latest
-      python_version: ${{ matrix.python_version }}
-      name_suffix: -${{ matrix.python_version }}
-      bootstrap_args: ""
-      docker_description: "PythonProjectBootstrapperTest5 - ${{ matrix.python_version }}"
-      push_image_as_package: true
-      container_registry_username: gt-sse-center
+  # BugBug # ----------------------------------------------------------------------
+  # BugBug create_docker_image:
+  # BugBug   needs: validate
+  # BugBug
+  # BugBug   strategy:
+  # BugBug     fail-fast: false
+  # BugBug
+  # BugBug     matrix:
+  # BugBug       python_version:
+  # BugBug         # BugBug - "3.12"
+  # BugBug         - "3.11"
+  # BugBug         # BugBug - "3.10"
+  # BugBug         # - "3.9"  # Not supported
+  # BugBug         # - "3.8"  # Not supported
+  # BugBug
+  # BugBug   name: Create Docker Image
+  # BugBug
+  # BugBug   permissions:
+  # BugBug     contents: read
+  # BugBug     packages: write
+  # BugBug
+  # BugBug   uses: davidbrownell/dbrownell_DevTools/.github/workflows/callable_create_docker_image.yaml@CI-v0.20.0
+  # BugBug   with:
+  # BugBug     operating_system: ubuntu-latest
+  # BugBug     python_version: ${{ matrix.python_version }}
+  # BugBug     name_suffix: -${{ matrix.python_version }}
+  # BugBug     bootstrap_args: ""
+  # BugBug     docker_description: "PythonProjectBootstrapperTest5 - ${{ matrix.python_version }}"
+  # BugBug     push_image_as_package: true
+  # BugBug     container_registry_username: gt-sse-center
 
 
   # ----------------------------------------------------------------------
@@ -224,7 +224,7 @@ jobs:
       - validate_package
       - validate_binary
 
-      - create_docker_image
+      # BugBug - create_docker_image
 
 
     name: Publish
@@ -239,4 +239,3 @@ jobs:
       PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
 
       MINISIGN_PRIVATE_KEY: ${{ secrets.MINISIGN_PRIVATE_KEY }}
-

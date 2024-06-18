@@ -219,24 +219,24 @@ jobs:
   # BugBug     container_registry_username: gt-sse-center
 
 
-  # ----------------------------------------------------------------------
-  publish:
-    needs:
-      - validate_package
-      - validate_binary
-
-      # BugBug - create_docker_image
-
-
-    name: Publish
-
-    permissions:
-      contents: write
-
-    uses: davidbrownell/dbrownell_DevTools/.github/workflows/callable_publish_python.yaml@CI-v0.20.0
-    with:
-      release_sources_configuration_filename: .github/release_sources.yaml
-    secrets:
-      PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
-
-      MINISIGN_PRIVATE_KEY: ${{ secrets.MINISIGN_PRIVATE_KEY }}
+  # BugBug # ----------------------------------------------------------------------
+  # BugBug publish:
+  # BugBug   needs:
+  # BugBug     - validate_package
+  # BugBug     - validate_binary
+  # BugBug
+  # BugBug     # BugBug - create_docker_image
+  # BugBug
+  # BugBug
+  # BugBug   name: Publish
+  # BugBug
+  # BugBug   permissions:
+  # BugBug     contents: write
+  # BugBug
+  # BugBug   uses: davidbrownell/dbrownell_DevTools/.github/workflows/callable_publish_python.yaml@CI-v0.20.0
+  # BugBug   with:
+  # BugBug     release_sources_configuration_filename: .github/release_sources.yaml
+  # BugBug   secrets:
+  # BugBug     PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
+  # BugBug
+  # BugBug     MINISIGN_PRIVATE_KEY: ${{ secrets.MINISIGN_PRIVATE_KEY }}

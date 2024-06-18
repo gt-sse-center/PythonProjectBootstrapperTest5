@@ -25,7 +25,7 @@ jobs:
   # ----------------------------------------------------------------------
   action_contexts:
     name: "Display GitHub Action Contexts"
-    uses: davidbrownell/dbrownell_DevTools/.github/workflows/callable_display_action_contexts.yaml@CI-v0.20.0
+    uses: davidbrownell/dbrownell_DevTools/.github/workflows/callable_display_action_contexts.yaml@CI-v0.21.0
 
   # ----------------------------------------------------------------------
   validate:
@@ -50,7 +50,7 @@ jobs:
     permissions:
       contents: read
 
-    uses: davidbrownell/dbrownell_DevTools/.github/workflows/callable_validate_python.yaml@CI-v0.20.0
+    uses: davidbrownell/dbrownell_DevTools/.github/workflows/callable_validate_python.yaml@CI-v0.21.0
     with:
       operating_system: ${{ matrix.os }}
       python_version: ${{ matrix.python_version }}
@@ -64,7 +64,7 @@ jobs:
     permissions:
       contents: read
 
-    uses: davidbrownell/dbrownell_DevTools/.github/workflows/callable_package_python_coverage.yaml@Coverage # BugBug CI-v0.20.0
+    uses: davidbrownell/dbrownell_DevTools/.github/workflows/callable_package_python_coverage.yaml@CI-v0.21.0
     with:
       gist_id: 2f9d770d13e3a148424f374f74d41f4b
       gist_filename: PythonProjectBootstrapperTest5_coverage.json
@@ -97,7 +97,7 @@ jobs:
     permissions:
       contents: read
 
-    uses: davidbrownell/dbrownell_DevTools/.github/workflows/callable_create_python_package.yaml@CI-v0.20.0
+    uses: davidbrownell/dbrownell_DevTools/.github/workflows/callable_create_python_package.yaml@CI-v0.21.0
     with:
       operating_system: ${{ matrix.os }}
       python_version: ${{ matrix.python_version }}
@@ -127,7 +127,7 @@ jobs:
     permissions:
       contents: read
 
-    uses: davidbrownell/dbrownell_DevTools/.github/workflows/callable_validate_python_package.yaml@CI-v0.20.0
+    uses: davidbrownell/dbrownell_DevTools/.github/workflows/callable_validate_python_package.yaml@CI-v0.21.0
     with:
       operating_system: ${{ matrix.os }}
       python_version: ${{ matrix.python_version }}
@@ -154,7 +154,7 @@ jobs:
     permissions:
       contents: read
 
-    uses: davidbrownell/dbrownell_DevTools/.github/workflows/callable_create_python_binary.yaml@CI-v0.20.0
+    uses: davidbrownell/dbrownell_DevTools/.github/workflows/callable_create_python_binary.yaml@CI-v0.21.0
     with:
       operating_system: ${{ matrix.os }}
       python_version: ${{ matrix.python_version }}
@@ -180,7 +180,7 @@ jobs:
     permissions:
       contents: read
 
-    uses: davidbrownell/dbrownell_DevTools/.github/workflows/callable_validate_python_binary.yaml@CI-v0.20.0
+    uses: davidbrownell/dbrownell_DevTools/.github/workflows/callable_validate_python_binary.yaml@CI-v0.21.0
     with:
       operating_system: ${{ matrix.os }}
       python_version: ${{ matrix.python_version }}
@@ -208,7 +208,7 @@ jobs:
   # BugBug     contents: read
   # BugBug     packages: write
   # BugBug
-  # BugBug   uses: davidbrownell/dbrownell_DevTools/.github/workflows/callable_create_docker_image.yaml@CI-v0.20.0
+  # BugBug   uses: davidbrownell/dbrownell_DevTools/.github/workflows/callable_create_docker_image.yaml@CI-v0.21.0
   # BugBug   with:
   # BugBug     operating_system: ubuntu-latest
   # BugBug     python_version: ${{ matrix.python_version }}
@@ -219,24 +219,24 @@ jobs:
   # BugBug     container_registry_username: gt-sse-center
 
 
-  # BugBug # ----------------------------------------------------------------------
-  # BugBug publish:
-  # BugBug   needs:
-  # BugBug     - validate_package
-  # BugBug     - validate_binary
-  # BugBug
-  # BugBug     # BugBug - create_docker_image
-  # BugBug
-  # BugBug
-  # BugBug   name: Publish
-  # BugBug
-  # BugBug   permissions:
-  # BugBug     contents: write
-  # BugBug
-  # BugBug   uses: davidbrownell/dbrownell_DevTools/.github/workflows/callable_publish_python.yaml@CI-v0.20.0
-  # BugBug   with:
-  # BugBug     release_sources_configuration_filename: .github/release_sources.yaml
-  # BugBug   secrets:
-  # BugBug     PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
-  # BugBug
-  # BugBug     MINISIGN_PRIVATE_KEY: ${{ secrets.MINISIGN_PRIVATE_KEY }}
+  # ----------------------------------------------------------------------
+  publish:
+    needs:
+      - validate_package
+      - validate_binary
+
+      # BugBug - create_docker_image
+
+
+    name: Publish
+
+    permissions:
+      contents: write
+
+    uses: davidbrownell/dbrownell_DevTools/.github/workflows/callable_publish_python.yaml@CI-v0.21.0
+    with:
+      release_sources_configuration_filename: .github/release_sources.yaml
+    secrets:
+      PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
+
+      MINISIGN_PRIVATE_KEY: ${{ secrets.MINISIGN_PRIVATE_KEY }}

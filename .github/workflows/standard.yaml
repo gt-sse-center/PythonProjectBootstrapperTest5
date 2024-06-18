@@ -34,14 +34,14 @@ jobs:
 
       matrix:
         os:
-          # BugBug - macos-latest
+          - macos-latest
           - ubuntu-latest
-          # BugBug - windows-latest
+          - windows-latest
 
         python_version:
-          # BugBug - "3.12"
+          - "3.12"
           - "3.11"
-          # BugBug - "3.10"
+          - "3.10"
           # - "3.9"  # Not supported
           # - "3.8"  # Not supported
 
@@ -81,14 +81,14 @@ jobs:
 
       matrix:
         os:
-          # BugBug - macos-latest
+          - macos-latest
           - ubuntu-latest
-          # BugBug - windows-latest
+          - windows-latest
 
         python_version:
-          # BugBug - "3.12"
+          - "3.12"
           - "3.11"
-          # BugBug - "3.10"
+          - "3.10"
           # - "3.9"  # Not supported
           # - "3.8"  # Not supported
 
@@ -111,14 +111,14 @@ jobs:
 
       matrix:
         os:
-          # BugBug - macos-latest
+          - macos-latest
           - ubuntu-latest
-          # BugBug - windows-latest
+          - windows-latest
 
         python_version:
-          # BugBug - "3.12"
+          - "3.12"
           - "3.11"
-          # BugBug - "3.10"
+          - "3.10"
           # - "3.9"  # Not supported
           # - "3.8"  # Not supported
 
@@ -142,9 +142,9 @@ jobs:
 
       matrix:
         os:
-          # BugBug - macos-latest
+          - macos-latest
           - ubuntu-latest
-          # BugBug - windows-latest
+          - windows-latest
 
         python_version:
           - "3.11"
@@ -168,9 +168,9 @@ jobs:
 
       matrix:
         os:
-          # BugBug - macos-latest
+          - macos-latest
           - ubuntu-latest
-          # BugBug - windows-latest
+          - windows-latest
 
         python_version:
           - "3.11"
@@ -187,36 +187,36 @@ jobs:
       validation_command: PythonProjectBootstrapperTest5 Version
 
 
-  # BugBug # ----------------------------------------------------------------------
-  # BugBug create_docker_image:
-  # BugBug   needs: validate
-  # BugBug
-  # BugBug   strategy:
-  # BugBug     fail-fast: false
-  # BugBug
-  # BugBug     matrix:
-  # BugBug       python_version:
-  # BugBug         # BugBug - "3.12"
-  # BugBug         - "3.11"
-  # BugBug         # BugBug - "3.10"
-  # BugBug         # - "3.9"  # Not supported
-  # BugBug         # - "3.8"  # Not supported
-  # BugBug
-  # BugBug   name: Create Docker Image
-  # BugBug
-  # BugBug   permissions:
-  # BugBug     contents: read
-  # BugBug     packages: write
-  # BugBug
-  # BugBug   uses: davidbrownell/dbrownell_DevTools/.github/workflows/callable_create_docker_image.yaml@CI-v0.21.0
-  # BugBug   with:
-  # BugBug     operating_system: ubuntu-latest
-  # BugBug     python_version: ${{ matrix.python_version }}
-  # BugBug     name_suffix: -${{ matrix.python_version }}
-  # BugBug     bootstrap_args: ""
-  # BugBug     docker_description: "PythonProjectBootstrapperTest5 - ${{ matrix.python_version }}"
-  # BugBug     push_image_as_package: true
-  # BugBug     container_registry_username: gt-sse-center
+  # ----------------------------------------------------------------------
+  create_docker_image:
+    needs: validate
+
+    strategy:
+      fail-fast: false
+
+      matrix:
+        python_version:
+          - "3.12"
+          - "3.11"
+          - "3.10"
+          # - "3.9"  # Not supported
+          # - "3.8"  # Not supported
+
+    name: Create Docker Image
+
+    permissions:
+      contents: read
+      packages: write
+
+    uses: davidbrownell/dbrownell_DevTools/.github/workflows/callable_create_docker_image.yaml@CI-v0.21.0
+    with:
+      operating_system: ubuntu-latest
+      python_version: ${{ matrix.python_version }}
+      name_suffix: -${{ matrix.python_version }}
+      bootstrap_args: ""
+      docker_description: "PythonProjectBootstrapperTest5 - ${{ matrix.python_version }}"
+      push_image_as_package: true
+      container_registry_username: gt-sse-center
 
 
   # ----------------------------------------------------------------------
@@ -225,7 +225,7 @@ jobs:
       - validate_package
       - validate_binary
 
-      # BugBug - create_docker_image
+      - create_docker_image
 
 
     name: Publish

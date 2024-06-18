@@ -68,7 +68,7 @@ jobs:
     with:
       gist_id: 2f9d770d13e3a148424f374f74d41f4b
       gist_filename: PythonProjectBootstrapperTest5_coverage.json
-      coverage_target: 90
+      coverage_target: 95
     secrets:
       GIST_TOKEN: ${{ secrets.GIST_TOKEN }}
 

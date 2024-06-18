@@ -189,7 +189,7 @@ jobs:
 
   # ----------------------------------------------------------------------
   create_docker_image:
-    needs: validate
+    needs: package_coverage
 
     strategy:
       fail-fast: false

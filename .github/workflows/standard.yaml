@@ -64,7 +64,7 @@ jobs:
     permissions:
       contents: read
 
-    uses: davidbrownell/dbrownell_DevTools/.github/workflows/callable_package_python_coverage.yaml@Coverage # BugBug CI-v0.20.0
+    uses: davidbrownell/dbrownell_DevTools/.github/workflows/callable_package_python_coverage.yaml@CI-v0.20.0
     with:
       gist_id: 2f9d770d13e3a148424f374f74d41f4b
       gist_filename: PythonProjectBootstrapperTest5_coverage.json
@@ -103,7 +103,7 @@ jobs:
 
   # ----------------------------------------------------------------------
   validate_package:
-    needs: create_package
+    needs: package_coverage
 
     strategy:
       fail-fast: false
@@ -134,7 +134,7 @@ jobs:
 
   # ----------------------------------------------------------------------
   create_binary:
-    needs: package_coverage
+    needs: validate
 
     strategy:
       fail-fast: false

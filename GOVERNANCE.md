@@ -1,2 +1,2 @@
 # Governance
-This project is governed by our [Community Guidelines](COMMUNITY_GUIDELINES.md) and [Code of Conduct](CODE_OF_CONDUCT.md).
+This project is governed by our [Code of Conduct](CODE_OF_CONDUCT.md) and [Contribution Guidelines](CONTRIBUTING.md).

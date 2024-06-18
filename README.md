@@ -18,11 +18,7 @@ Test project for PythonProjectBootstrapper.
 ## Contents
 - [Overview](#overview)
 - [Installation](#installation)
-<!-- BugBug
-- [Contributing](#contributing)
-- [Local Development](#local-development)
-- [Vulnerability Reporting](#vulnerability-reporting-security-issues)
--->
+- [Development](#development)
 - [Additional Information](#additional-information)
 - [License](#license)
 <!-- END: Exclude Package -->
@@ -71,22 +67,11 @@ Install the PythonProjectBootstrapperTest5 package via [pip](https://pip.pypa.io
 
 `pip install PythonProjectBootstrapperTest5`
 
+## Development
+
+Please visit [Contributing](https://github.com/gt-sse-center/PythonProjectBootstrapperTest5/blob/main/CONTRIBUTING.md) and [Development](https://github.com/gt-sse-center/PythonProjectBootstrapperTest5/blob/main/DEVELOPMENT.md) for information on contributing to this project.
+
 <!-- END: Exclude Package -->
-
-<!-- BugBug
-## Contributing
-See [CONTRIBUTING.md](https://github.com/gt-sse-center/PythonProjectBootstrapperTest5/blob/main/CONTRIBUTING.md) for information on contributing to PythonProjectBootstrapperTest5.
-
-## Local Development
-
-See [DEVELOPMENT.md](https://github.com/gt-sse-center/PythonProjectBootstrapperTest5/blob/main/DEVELOPMENT.md) for information on developing or testing PythonProjectBootstrapperTest5 on your local Linux, MacOS, or Windows machine.
-
-
-## Vulnerability Reporting (Security Issues)
-Please privately report vulnerabilities you find so we can fix them!
-
-See [SECURITY.md](https://github.com/gt-sse-center/PythonProjectBootstrapperTest5/blob/main/SECURITY.md) for information on how to privately report vulnerabilities.
--->
 
 ## Additional Information
 
@@ -95,12 +80,11 @@ Additional information can be found at these locations.
 | Title | Document | Description |
 | --- | --- | --- |
 | Code of Conduct | [CODE_OF_CONDUCT.md](https://github.com/gt-sse-center/PythonProjectBootstrapperTest5/blob/main/CODE_OF_CONDUCT.md) | Information about the the norms, rules, and responsibilities we adhere to when participating in this open source community. |
-| Community Guidelines | [COMMUNITY_GUIDELINES.md](https://github.com/gt-sse-center/PythonProjectBootstrapperTest5/blob/main/COMMUNITY_GUIDELINES.md) | BugBug |
-| Contributing | [CONTRIBUTING.md](https://github.com/gt-sse-center/PythonProjectBootstrapperTest5/blob/main/CONTRIBUTING.md) | BugBug |
-| Development | [DEVELOPMENT.md](https://github.com/gt-sse-center/PythonProjectBootstrapperTest5/blob/main/DEVELOPMENT.md) | BugBug |
-| Governance | [GOVERNANCE.md](https://github.com/gt-sse-center/PythonProjectBootstrapperTest5/blob/main/GOVERNANCE.md) | BugBug |
-| Maintainers | [MAINTAINERS.md](https://github.com/gt-sse-center/PythonProjectBootstrapperTest5/blob/main/MAINTAINERS.md) | BugBug |
-| Security | [SECURITY.md](https://github.com/gt-sse-center/PythonProjectBootstrapperTest5/blob/main/SECURITY.md) | BugBug |
+| Contributing | [CONTRIBUTING.md](https://github.com/gt-sse-center/PythonProjectBootstrapperTest5/blob/main/CONTRIBUTING.md) | Information about contributing code changes to this project. |
+| Development | [DEVELOPMENT.md](https://github.com/gt-sse-center/PythonProjectBootstrapperTest5/blob/main/DEVELOPMENT.md) | Information about development activities involved in making changes to this project. |
+| Governance | [GOVERNANCE.md](https://github.com/gt-sse-center/PythonProjectBootstrapperTest5/blob/main/GOVERNANCE.md) | Information about how this project is governed. |
+| Maintainers | [MAINTAINERS.md](https://github.com/gt-sse-center/PythonProjectBootstrapperTest5/blob/main/MAINTAINERS.md) | Information about individuals who maintain this project. |
+| Security | [SECURITY.md](https://github.com/gt-sse-center/PythonProjectBootstrapperTest5/blob/main/SECURITY.md) | Information about how to privately report security issues associated with this project. |
 
 ## License
 
